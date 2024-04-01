@@ -10,7 +10,9 @@ body {
 }
 
 .container {
-    width: 20%; /* Reduzindo a largura */
+    width: 90%; /* Definindo a largura relativa */
+    max-width: 400px; /* Definindo uma largura máxima */
+    margin: 50px auto; /* Adicionando margens superior e inferior e centralizando horizontalmente */
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); /* Transparente */
     border-radius: 8px;
