@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="atualizar_excluir_atleta.css">
+    <title>Atualizar Atleta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
+    <div id="header">
+        <h1>Atualizando Atleta</h1>
+    </div>
+
+    <div id="content">
+        <form id="atletaForm">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" placeholder="id"><br><br>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="nome"><br><br>
+            
+            <label for="idade">Idade:</label>
+            <input type="text" id="idade" name="idade" placeholder="idade"><br><br>
+            
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" placeholder="país"><br><br>
+            
+            <label for="esporte">Esporte:</label>
+            <input type="text" id="esporte" name="esporte" placeholder="esporte"><br><br>
+            
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+
     
 </body>
 </html>
