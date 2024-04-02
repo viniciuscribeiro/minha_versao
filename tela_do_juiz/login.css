@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #aed6f1; /* Azul claro */
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Fundo gradiente */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,17 +10,21 @@ body {
 }
 
 .container {
-    width: 90%; /* Definindo a largura relativa */
-    max-width: 400px; /* Definindo uma largura máxima */
-    margin: 50px auto; /* Adicionando margens superior e inferior e centralizando horizontalmente */
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Transparente */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Alinhamento do conteúdo */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco transparente */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
 }
 
-
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h1 {
     color: #333;
@@ -31,35 +35,60 @@ h1 {
 }
 
 .login-form {
-    margin-top: 20px; /* Espaçamento superior */
+    margin-top: 20px;
 }
 
 .login-form label {
     display: block;
-    margin-bottom: 15px; /* Aumentando o espaçamento */
+    margin-bottom: 10px;
     color: #555;
 }
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 24px); /* Ajuste para levar em conta a largura da borda */
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid black; /* Borda preta */
+    border-radius: 6px; /* Bordas arredondadas */
     box-sizing: border-box;
+    background-color: #f8f8f8; /* Cor de fundo */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6); /* Sombra suave ao focar */
 }
 
 .login-form button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    margin-bottom: 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Bordas arredondadas */
+    background: linear-gradient(to right, #007bff, #0056b3); /* Gradiente nos botões */
     color: #fff;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave para o background e transform */
 }
 
 .login-form button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #0056b3, #003e80); /* Gradiente de destaque ao passar o cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave ao passar o cursor */
+    transform: translateY(-2px); /* Efeito de levantamento */
+}
+
+
+.error-message {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }
