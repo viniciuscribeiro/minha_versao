@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Fundo gradiente */
 }
 
 #header {
@@ -10,6 +10,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 20px;
+    font-size: 24px;
 }
 
 #content {
@@ -17,34 +18,36 @@ body {
     width: 80%;
     max-width: 600px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     padding: 20px;
 }
 
 #footer {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 #footer a {
     text-decoration: none;
-    color: #007bff;
-    margin: 0 100px; /* Espaçamento entre os links */
+    color: #000000;
+    margin: 0 100px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #footer a:hover {
     text-decoration: underline;
 }
 
-
-
 label {
     display: block;
     margin-bottom: 10px;
     color: #555;
+    font-size: 18px; /* Tamanho da fonte aumentado */
 }
 
 input[type="text"],
@@ -52,23 +55,27 @@ input[type="number"] {
     width: calc(100% - 22px); /* Ajuste para levar em conta a largura da borda */
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid black; /* Borda preta */
+    border-radius: 6px; /* Bordas arredondadas */
     box-sizing: border-box;
+    font-size: 16px; /* Tamanho da fonte aumentado */
 }
 
 button {
+    font-size: 18px;
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #007bff; /* Cor do botão */
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Bordas arredondadas */
     color: #fff;
     cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease; /* Transição suave */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Cor de destaque ao passar o cursor */
 }
 
 a {
