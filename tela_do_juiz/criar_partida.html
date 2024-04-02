@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="criar_partida.css"> <!-- Link para o arquivo de estilo -->
+    <title>Criando Partida</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Criando Partida</h1>
+    </div>
+
+    <div id="content">
+        <h2>Partida</h2>
+        <form id="partidaForm" class="grid-container">
+            <div>
+                <h3>ATLETA 1</h3>
+                <label for="atleta1Nome">Nome:</label>
+                <input type="text" id="atleta1Nome" name="atleta1Nome" required>
+                <label for="atleta1Pais">País:</label>
+                <input type="text" id="atleta1Pais" name="atleta1Pais" required>
+                <label for="pontosAtleta1">Pontos:</label>
+                <input type="number" id="pontosAtleta1" name="pontosAtleta1" required>
+            </div>
+            <div>
+                <h3>ATLETA 2</h3>
+                <label for="atleta2Nome">Nome:</label>
+                <input type="text" id="atleta2Nome" name="atleta2Nome" required>
+                <label for="atleta2Pais">País:</label>
+                <input type="text" id="atleta2Pais" name="atleta2Pais" required>
+                <label for="pontosAtleta2">Pontos:</label>
+                <input type="number" id="pontosAtleta2" name="pontosAtleta2" required>
+            </div>
+            <button type="submit">Criar Partida</button>
+        </form>
+    </div>
+
+    <div id="footer">
+        <a href="home.html">Voltar para Home</a>
+        <a href="criar_atleta.html">Criar Atleta</a>
+    </div>
+</body>
+</html>
