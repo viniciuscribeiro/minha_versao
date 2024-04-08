@@ -23,13 +23,24 @@
             <input type="number" id="alturaAtleta" name="alturaAtleta" placeholder="altura" required><br><br>
             <label for="pesoAtleta">Peso (kg):</label>
             <input type="number" id="pesoAtleta" name="pesoAtleta" placeholder="peso" required><br><br>
-            <label for="especializacaoAtleta">Especializações:</label>
-            <select id="especializacaoAtleta" name="especializacaoAtleta">
-                <option value="crawl">Crawl</option>
-                <option value="costas">Costas</option>
-                <option value="peito">Peito</option>
-                <option value="borboleta">Borboleta</option>
-            </select><br><br>
+
+            <label for="especializacoes">Especializações:</label>
+            <div id="especializacoes" class="grid-container">
+                <div>
+                    <input type="checkbox" id="crawl" name="especializacaoAtleta" value="crawl">
+                    <label for="crawl">Crawl</label><br>
+                    <input type="checkbox" id="costas" name="especializacaoAtleta" value="costas">
+                    <label for="costas">Costas</label><br>
+                </div>
+                <div>
+                    <input type="checkbox" id="peito" name="especializacaoAtleta" value="peito">
+                    <label for="peito">Peito</label><br>
+                    <input type="checkbox" id="borboleta" name="especializacaoAtleta" value="borboleta">
+                    <label for="borboleta">Borboleta</label><br>
+                </div>
+            </div>
+
+
             <label for="paisAtleta">País:</label>
             <input type="text" id="paisAtleta" name="paisAtleta" placeholder="país" required><br><br>
             <label for="equipeAtleta">Equipe:</label>

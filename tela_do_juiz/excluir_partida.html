@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="atualizar_excluir_atleta.css">
-    <title>Atualizar Atleta</title>
+    <link rel="stylesheet" href="criar_partida.css"> <!-- Link para o arquivo de estilo -->
+    <title>Criando Partida</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
     <div id="header">
-        <h1>Atualizando Atleta</h1>
+        <h1>Excluir Partida</h1>
     </div>
 
     <div id="content">
-        <h2>Atualizando Atleta</h2>
-        <form id="atletaForm">
+        <h2>Excluindo Partida</h2>
+        <form id="partidaForm">
             <label for="id">ID:</label>
             <input type="text" id="id" name="id" placeholder="id"><br><br>
-            <label for="nomeAtleta">Nome:</label>
-            <input type="text" id="nomeAtleta" name="nomeAtleta" placeholder="nome" required><br><br>
-            <label for="idadeAtleta">Idade:</label>
-            <input type="number" id="idadeAtleta" name="idadeAtleta" placeholder="idade" required><br><br>
-            <label for="alturaAtleta">Altura (cm):</label>
-            <input type="number" id="alturaAtleta" name="alturaAtleta" placeholder="altura" required><br><br>
-            <label for="pesoAtleta">Peso (kg):</label>
-            <input type="number" id="pesoAtleta" name="pesoAtleta" placeholder="peso" required><br><br>
+            
+            <label for="dataHoraPartida">Data e Hora:</label>
+            <input type="datetime-local" id="dataHoraPartida" name="dataHoraPartida" required><br><br>
 
             <label for="especializacoes">Especializações:</label>
             <div id="especializacoes" class="grid-container">
@@ -42,20 +37,27 @@
                 </div>
             </div>
 
+            <label for="distanciaProva">Distância da Prova:</label>
+            <select id="distanciaProva" name="distanciaProva" required>
+                <option value="50m">50m</option>
+                <option value="100m">100m</option>
+                <option value="200m">200m</option>
+                <option value="400m">400m</option>
+                <option value="800m">800m</option>
+                <option value="1500m">1500m</option>
+            </select><br><br>
 
-            <label for="paisAtleta">País:</label>
-            <input type="text" id="paisAtleta" name="paisAtleta" placeholder="país" required><br><br>
-            <label for="equipeAtleta">Equipe:</label>
-            <input type="text" id="equipeAtleta" name="equipeAtleta" placeholder="equipe" required><br><br>
-            <label for="esporteAtleta">Esporte:</label>
-            <input type="text" id="esporteAtleta" name="esporteAtleta" placeholder="esporte" required><br><br>
-            <button type="button" ">Atualizar Atleta</button>
+            <hr>
+    
+            <button type="submit">Excluir Partida</button>
         </form>
     </div>
+    
 
     <div id="footer">
         <a href="home.html">Voltar para Home</a>
     </div>
-    
+
+    <script src="script_criar_partida.js"></script> <!-- Script JavaScript -->
 </body>
 </html>
