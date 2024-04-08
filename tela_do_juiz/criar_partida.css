@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Fundo gradiente */
 }
 
 #header {
@@ -10,6 +10,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 20px;
+    font-size: 24px;
 }
 
 #content {
@@ -17,57 +18,64 @@ body {
     width: 80%;
     max-width: 600px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
 #footer {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 
 #footer a {
     text-decoration: none;
-    color: #007bff;
-    margin: 0 6%; /* Espaçamento entre os links */
+    color: #000000;
+    margin: 0 6%;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #footer a:hover {
     text-decoration: underline;
 }
 
-
 h3 {
     margin-top: 0;
+    color: #555;
+    font-size: 18px;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
     color: #555;
+    font-size: 16px;
 }
 
 input[type="text"],
-input[type="number"] {
-    width: calc(100% - 22px); /* Ajuste para levar em conta a largura da borda */
+input[type="number"],
+select {
+    width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid black;
+    border-radius: 6px;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #007bff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     color: #fff;
     cursor: pointer;
+    font-size: 18px;
 }
 
 button:hover {
@@ -83,13 +91,43 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Estilos específicos para o layout de 2 colunas */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+/* Estilo específico para o campo de data e hora */
+input[type="datetime-local"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-.grid-container > div {
-    grid-column: span 1;
+
+
+/* Estilos para os atletas ficarem um ao lado do outro */
+#atletasContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Para que os atletas que não couberem na mesma linha sejam enviados para a próxima linha */
+    justify-content: space-between; /* Distribui os atletas uniformemente ao longo do contêiner */
+}
+
+.atleta {
+    width: calc(33.33% - 10px); /* Definindo a largura de cada atleta para ocupar 1/3 do contêiner */
+    margin-bottom: 20px; /* Espaçamento entre os atletas */
+}
+
+/* Estilos para o campo de especializações */
+#especializacoes {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#especializacoes option {
+    font-size: 16px;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="criar_partida.css"> <!-- Link para o arquivo de estilo -->
     <title>Criando Partida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
     <div id="header">
@@ -13,32 +14,72 @@
 
     <div id="content">
         <h2>Partida</h2>
-        <form id="partidaForm" class="grid-container">
-            <div>
-                <h3>ATLETA 1</h3>
-                <label for="atleta1Nome">Nome:</label>
-                <input type="text" id="atleta1Nome" name="atleta1Nome" required>
-                <label for="atleta1Pais">País:</label>
-                <input type="text" id="atleta1Pais" name="atleta1Pais" required>
-                <label for="pontosAtleta1">Pontos:</label>
-                <input type="number" id="pontosAtleta1" name="pontosAtleta1" required>
+        <form id="partidaForm">
+            <label for="dataHoraPartida">Data e Hora:</label>
+            <input type="datetime-local" id="dataHoraPartida" name="dataHoraPartida" required><br><br>
+
+            <label for="especializacoes">Especializações:</label>
+            <select id="especializacoes" name="especializacoes" required>
+                <option value="crawl">Crawl</option>
+                <option value="costas">Costas</option>
+                <option value="peito">Peito</option>
+                <option value="borboleta">Borboleta</option>
+            </select><br><br>
+
+            <label for="distanciaProva">Distância da Prova:</label>
+            <select id="distanciaProva" name="distanciaProva" required>
+                <option value="50m">50m</option>
+                <option value="100m">100m</option>
+                <option value="200m">200m</option>
+                <option value="400m">400m</option>
+                <option value="800m">800m</option>
+                <option value="1500m">1500m</option>
+            </select><br><br>
+    
+            <!-- Campos dos Atletas -->
+            <div id="atletasContainer">
+                <div class="atleta">
+                    <h3>Atleta 1</h3>
+                    <label for="atleta1Id">ID:</label>
+                    <input type="text" id="atleta1Id" name="atleta1Id" required>
+                    <label for="atleta1Nome">Nome:</label>
+                    <input type="text" id="atleta1Nome" name="atleta1Nome" required>
+                </div>
+                <div class="atleta">
+                    <h3>Atleta 2</h3>
+                    <label for="atleta2Id">ID:</label>
+                    <input type="text" id="atleta2Id" name="atleta2Id" required>
+                    <label for="atleta2Nome">Nome:</label>
+                    <input type="text" id="atleta2Nome" name="atleta2Nome" required>
+                </div>
+                <div class="atleta">
+                    <h3>Atleta 3</h3>
+                    <label for="atleta3Id">ID:</label>
+                    <input type="text" id="atleta3Id" name="atleta3Id" required>
+                    <label for="atleta3Nome">Nome:</label>
+                    <input type="text" id="atleta3Nome" name="atleta3Nome" required>
+                </div>
             </div>
-            <div>
-                <h3>ATLETA 2</h3>
-                <label for="atleta2Nome">Nome:</label>
-                <input type="text" id="atleta2Nome" name="atleta2Nome" required>
-                <label for="atleta2Pais">País:</label>
-                <input type="text" id="atleta2Pais" name="atleta2Pais" required>
-                <label for="pontosAtleta2">Pontos:</label>
-                <input type="number" id="pontosAtleta2" name="pontosAtleta2" required>
+    
+            <label for="localPartida">Local:</label>
+            <input type="text" id="localPartida" name="localPartida" required><br><br>
+            
+            <!-- Campo para exibir o resultado -->
+            <div id="resultadoPartida" style="display: none;">
+                <label for="vencedor">Vencedor:</label>
+                <input type="text" id="vencedor" name="vencedor" readonly>
             </div>
+    
             <button type="submit">Criar Partida</button>
         </form>
     </div>
+    
 
     <div id="footer">
         <a href="home.html">Voltar para Home</a>
         <a href="criar_atleta.html">Criar Atleta</a>
     </div>
+
+    <script src="script_criar_partida.js"></script> <!-- Script JavaScript -->
 </body>
 </html>
