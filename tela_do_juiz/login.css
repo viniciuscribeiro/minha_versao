@@ -92,3 +92,22 @@ h1 {
     75% { transform: rotate(-5deg); }
     100% { transform: rotate(0deg); }
 }
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(to right, #6f42c1, #563d7c); /* Gradiente roxo */
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background: linear-gradient(to right, #563d7c, #452d5b); /* Gradiente roxo mais escuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
