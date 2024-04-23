@@ -64,20 +64,33 @@ h1 {
 
 .login-form button {
     width: 100%;
-    padding: 12px;
+    /* padding: 12px;
     margin-bottom: 15px;
     border: none;
-    border-radius: 6px; /* Bordas arredondadas */
-    background: linear-gradient(to right, #007bff, #0056b3); /* Gradiente nos botões */
+    border-radius: 6px;
+    
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave para o background e transform */
+    transition: background 0.3s ease, transform 0.3s ease;  */
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(to right, #007bff, #0056b3); 
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    display: block; /* Tornar o botão ocupar toda a largura disponível */
+    text-align: center; /* Centralizar o texto no botão */
+    text-decoration: none; /* Remover sublinhado padrão em links */
+    font-size: 14px;
 }
 
 .login-form button:hover {
     background: linear-gradient(to right, #0056b3, #003e80); /* Gradiente de destaque ao passar o cursor */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave ao passar o cursor */
     transform: translateY(-2px); /* Efeito de levantamento */
+    
 }
 
 
@@ -94,7 +107,7 @@ h1 {
 }
 
 .register-button {
-    width: 100%;
+    width: calc(100% - 24px); /* Ajuste para levar em conta a largura da borda */
     padding: 12px;
     border: none;
     border-radius: 6px;
@@ -102,7 +115,10 @@ h1 {
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 10px;
+    margin-top: 15px;
+    display: block; /* Tornar o botão ocupar toda a largura disponível */
+    text-align: center; /* Centralizar o texto no botão */
+    text-decoration: none; /* Remover sublinhado padrão em links */
 }
 
 .register-button:hover {
@@ -110,4 +126,5 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
+
 
