@@ -106,25 +106,31 @@ h1 {
     100% { transform: rotate(0deg); }
 }
 
-.register-button {
-    width: calc(100% - 24px); /* Ajuste para levar em conta a largura da borda */
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(to right, #6f42c1, #563d7c); /* Gradiente roxo */
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 15px;
-    display: block; /* Tornar o botão ocupar toda a largura disponível */
-    text-align: center; /* Centralizar o texto no botão */
-    text-decoration: none; /* Remover sublinhado padrão em links */
+.register-link {
+    color: #007bff; 
+    transition: color 0.3s; 
 }
 
-.register-button:hover {
-    background: linear-gradient(to right, #563d7c, #452d5b); /* Gradiente roxo mais escuro */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+.register-link:hover {
+    color: #0056b3; 
 }
+
+.forgot-password {
+    margin-top: 5px; 
+    color: #555; 
+    font-size: 14px; 
+}
+
+.forgot-password a {
+    color: #007bff; 
+    transition: color 0.3s; 
+}
+
+.forgot-password a:hover {
+    color: #0056b3; 
+}
+
+
+
 
 
