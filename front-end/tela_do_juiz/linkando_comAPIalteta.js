@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             best_times: best_times,
             medal_history: medal_history
         };
-
+        console.log('Atleta criado:', novoAtleta);
         // Chamar a função para criar o novo atleta
         await criarAtleta(novoAtleta);
     });
