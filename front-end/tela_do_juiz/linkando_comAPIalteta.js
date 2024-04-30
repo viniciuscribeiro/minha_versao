@@ -3,25 +3,29 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Evita o envio padrão do formulário
 
         // Obter valores dos campos do formulário
-        const nome = document.getElementById('nomeAtleta').value;
-        const idade = parseInt(document.getElementById('idadeAtleta').value);
-        const altura = parseInt(document.getElementById('alturaAtleta').value);
-        const peso = parseInt(document.getElementById('pesoAtleta').value);
-        const especializacao = document.querySelector('input[name="especializacaoAtleta"]:checked').value; 
-        const pais = document.getElementById('paisAtleta').value;
-        const equipe = document.getElementById('equipeAtleta').value;
-        const esporte = document.getElementById('esporteAtleta').value;
+        const name = document.getElementById('nomeAtleta').value;
+        const birth_date = document.getElementById('idadeAtleta').value;
+        const height = parseInt(document.getElementById('alturaAtleta').value);
+        const weight = parseInt(document.getElementById('pesoAtleta').value);
+        const best_times = document.getElementById('bestTimes').value;
+        const medal_history = document.getElementById('medalHistory').value;
+        const specializations = document.querySelector('input[name="especializacaoAtleta"]:checked').value; 
+        const country = document.getElementById('paisAtleta').value;
+        const team = document.getElementById('equipeAtleta').value;
+        const modality = document.getElementById('esporteAtleta').value;
 
         // Criar objeto novoAtleta
         const novoAtleta = {
-            nome: nome,
-            idade: idade,
-            altura: altura,
-            peso: peso,
-            especializacao: especializacao  ,
-            pais: pais,
-            equipe: equipe,
-            esporte: esporte
+            name: name,
+            birth_date: birth_date,
+            height: height,
+            weight: weight,
+            specializations: specializations ,
+            country: country,
+            team: team,
+            modality: modality,
+            best_times: best_times,
+            medal_history: medal_history
         };
 
         // Chamar a função para criar o novo atleta
