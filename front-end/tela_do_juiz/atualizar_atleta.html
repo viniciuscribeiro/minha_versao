@@ -15,16 +15,18 @@
     <div id="content">
         <h2>Atualizando Atleta</h2>
         <form id="atletaForm">
-            <label for="id">ID:</label>
-            <input type="text" id="id" name="id" placeholder="id"><br><br>
             <label for="nomeAtleta">Nome:</label>
             <input type="text" id="nomeAtleta" name="nomeAtleta" placeholder="nome" required><br><br>
-            <label for="idadeAtleta">Idade:</label>
-            <input type="number" id="idadeAtleta" name="idadeAtleta" placeholder="idade" required><br><br>
+            <label for="idadeAtleta">Data de Nascimento:</label>
+            <input type="date" id="idadeAtleta" name="idadeAtleta" placeholder="idade" required><br><br>
+            <label for="paisAtleta">País:</label>
+            <input type="text" id="paisAtleta" name="paisAtleta" placeholder="país" required><br><br>
             <label for="alturaAtleta">Altura (cm):</label>
             <input type="number" id="alturaAtleta" name="alturaAtleta" placeholder="altura" required><br><br>
             <label for="pesoAtleta">Peso (kg):</label>
             <input type="number" id="pesoAtleta" name="pesoAtleta" placeholder="peso" required><br><br>
+            <label for="pesoAtleta">Histórico de Medalha:</label>
+            <input type="text" id="medalHistory" name="medalHistory" placeholder="histórico de medalhas" required><br><br>
 
             <label for="especializacoes">Especializações:</label>
             <div id="especializacoes" class="grid-container">
@@ -42,14 +44,13 @@
                 </div>
             </div>
 
-
-            <label for="paisAtleta">País:</label>
-            <input type="text" id="paisAtleta" name="paisAtleta" placeholder="país" required><br><br>
+            <label for="pesoAtleta">Melhores tempos:</label>
+            <input type="text" id="bestTimes" name="bestTimes" placeholder="melhores tempos" required><br><br>
             <label for="equipeAtleta">Equipe:</label>
             <input type="text" id="equipeAtleta" name="equipeAtleta" placeholder="equipe" required><br><br>
-            <label for="esporteAtleta">Esporte:</label>
+            <label for="esporteAtleta">Modalidade:</label>
             <input type="text" id="esporteAtleta" name="esporteAtleta" placeholder="esporte" required><br><br>
-            <button type="button" ">Atualizar Atleta</button>
+            <button type="submit">Criar Atleta</button>
         </form>
     </div>
 
@@ -57,5 +58,6 @@
         <a href="home.html">Voltar para Home</a>
     </div>
     
+    <script src="put_do_atleta.js"></script> 
 </body>
 </html>
