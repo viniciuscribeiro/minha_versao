@@ -81,6 +81,7 @@
     background-image: linear-gradient(to right, #050A30 100%, #12229D 34%);
     color: white;
     text-align: center;
+    cursor: pointer;
 }
 
 p.login_button > a{
