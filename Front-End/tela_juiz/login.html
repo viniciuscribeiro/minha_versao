@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/login.css" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="background_img"
+        src="/assets/images/Geometric Blue Background.png"
+      />
+      <div class="form_container">
+        <div class="form">
+          <a class="login_title">LogIn</a>
+          <br />
+          <div id="error-message" class="error-message"></div>
+          <!-- Div para exibir mensagem de erro -->
+          <form>
+            <div class="input-field">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Usuário"
+                required
+              />
+              <div class="underline"></div>
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Senha"
+                required
+              />
+              <div class="underline"></div>
+            </div>
+            <p class="forgot_password"><a href="#">Esqueceu a senha?</a></p>
+            <br />
+            <p class="login_button"><a href="">Entrar</a></p>
+          </form>
+          <p>
+            Não tem uma conta?
+            <a class="register-link" href="/tela_registro/cadastro_juiz.html"
+              >Registrar</a
+            >
+          </p>
+        </div>
+      </div>
+      <img class="side_image" src="/assets/images/Swimmer Cadastration.png" />
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>
