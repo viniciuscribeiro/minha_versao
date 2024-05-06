@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const data = await response.json();
             console.log('Novo atleta criado:', data);
-            // Faça algo com a resposta, se necessário
+            alert('Atleta Criado com sucesso!');
+
         } catch (error) {
             console.error('Erro ao criar atleta:', error);
         }

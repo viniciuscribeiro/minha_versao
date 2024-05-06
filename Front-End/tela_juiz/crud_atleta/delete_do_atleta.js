@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             if (response.ok) {
                 console.log('Atleta excluído com sucesso');
+                alert('Atleta excluído com sucesso!');
                 // Faça algo após a exclusão, se necessário
             } else {
                 console.error('Erro ao excluir atleta:', response.statusText);

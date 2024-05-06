@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const data = await response.json();
             console.log('Atleta encontrado:', data);
+            alert('Buscar atleta com sucesso!');
             // Aqui você pode manipular os dados do atleta encontrado e exibi-los na página
         } catch (error) {
             console.error(error.message);
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const data = await response.json();
             console.log('Todos os atletas:', data);
+            alert('Buscar todos atletas com sucesso!');
             // Aqui você pode manipular os dados de todos os atletas e exibi-los na página
         } catch (error) {
             console.error(error.message);

@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const data = await response.json();
             console.log('Atleta atualizado:', data);
+            alert('Atleta atualizado com sucesso!');
             // Faça algo com a resposta, se necessário
         } catch (error) {
             console.error('Erro ao atualizar atleta:', error);
