@@ -63,16 +63,37 @@
             top: calc(50% + 30px); /* Ajusta a posição vertical da lixeira */
         }
 
+        .criar_aatleta {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px; /* Bordas arredondadas */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+            font-size: 18px; /* Aumenta o tamanho da fonte */
+            cursor: pointer; /* Muda o cursor ao passar por cima */
+            margin-bottom: 100px;
+        }
+
+        .criar_aatleta:hover {
+            background-color: #0056b3; /* Cor de destaque ao passar o cursor */
+            transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+        }
+
     </style>
 
 
 </head>
 <body>
     <div id="header">
-        <h1>Buscar Atleta</h1>
+        <h1>ATLETA</h1>
     </div>
 
     <div id="content">
+        <a class="criar_aatleta" href="criar_atleta.html">Criar Atleta</a></li>
+        
         <form id="buscarAtletaForm">
             <label for="nomeAtleta">Nome do Atleta:</label>
             <input type="text" id="nomeAtleta" name="nomeAtleta" placeholder="Nome" required><br><br>

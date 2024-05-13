@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             linkEditar.appendChild(imgCaneta);
     
             const linkExcluir = document.createElement('a');
-            linkExcluir.href = '../tela_juiz/excluir_atleta.html'; // Defina o URL de exclusão aqui
+            linkExcluir.href = `../tela_juiz/excluir_atleta.html?id=${atleta.id}`; // Defina o URL de exclusão aqui
             linkExcluir.classList.add('link-excluir');
             const imgLixeira = document.createElement('img');
             imgLixeira.src = 'https://cdn-icons-png.flaticon.com/512/1214/1214428.png'; // URL da imagem da lixeira

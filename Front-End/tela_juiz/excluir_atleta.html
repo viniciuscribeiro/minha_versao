@@ -10,6 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     />
   </head>
+
+  <style>
+
+    #idAtleta, .idAtleta {
+      display: none;
+    }
+
+  </style>
+
   <body>
     <div id="header">
       <h1>Excluir Atleta</h1>
@@ -17,11 +26,11 @@
 
     <div id="content">
       <form id="atletaForm">
-        <label for="id">ID:</label>
+        <label for="id", class="idAtleta">ID:</label>
         <input
           type="number"
-          id="idAtletaParaExcluir"
-          name="idAtletaParaExcluir"
+          id="idAtleta"
+          name="idAtleta"
           placeholder="id"
         /><br /><br />
 
