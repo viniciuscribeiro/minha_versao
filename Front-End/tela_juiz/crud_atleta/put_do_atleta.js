@@ -1,6 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Obter o campo de ID do atleta
     const idAtletaInput = document.getElementById('idAtleta');
 
+    // Obter o ID do atleta da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const idAtletaFromURL = urlParams.get('id');
+
+    // Preencher o campo "ID" com o valor da URL, se disponível
+    if (idAtletaFromURL) {
+        idAtletaInput.value = idAtletaFromURL;
+        // Chamada para preencher os campos do formulário imediatamente
+        await preencherCamposComDadosDoAtleta(idAtletaFromURL);
+    }
+
+    // Função para buscar os dados do atleta e preencher os campos do formulário
+    async function preencherCamposComDadosDoAtleta(idAtleta) {
+        const dadosAtuais = await buscarAtleta(idAtleta);
+
+        if (dadosAtuais) {
+            preencherCamposFormulario(dadosAtuais);
+        } else {
+            console.error('Erro ao obter dados do atleta');
+        }
+    }
+
+    // Função para buscar os dados do atleta
+    async function buscarAtleta(idAtleta) {
+        try {
+            const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/athlete/${idAtleta}`);
+            if (!response.ok) {
+                throw new Error('Atleta não encontrado');
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error(`Erro ao buscar atleta: ${error.message}`);
+            return null;
+        }
+    }
+
+    // Função para preencher os campos do formulário com os dados do atleta
+    function preencherCamposFormulario(dadosAtuais) {
+        document.getElementById('nomeAtleta').value = dadosAtuais.name;
+        document.getElementById('idadeAtleta').value = dadosAtuais.birth_date;
+        document.getElementById('alturaAtleta').value = dadosAtuais.height;
+        document.getElementById('pesoAtleta').value = dadosAtuais.weight;
+        document.getElementById('bestTimes').value = dadosAtuais.best_times;
+        document.getElementById('medalHistory').value = dadosAtuais.medal_history;
+        document.getElementById('specializations').value = dadosAtuais.specializations;
+        document.getElementById('paisAtleta').value = dadosAtuais.country;
+        document.getElementById('equipeAtleta').value = dadosAtuais.team;
+        document.getElementById('esporteAtleta').value = dadosAtuais.modality;
+    }
+
+    // Event listener para quando o campo de ID do atleta mudar
     idAtletaInput.addEventListener('change', async function() {
         const idAtleta = idAtletaInput.value.trim();
         const dadosAtuais = await buscarAtleta(idAtleta);
@@ -8,10 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dadosAtuais) {
             preencherCamposFormulario(dadosAtuais);
         } else {
-            limparCamposFormulario();
+            console.error('Erro ao obter dados do atleta');
         }
     });
 
+    // Event listener para o envio do formulário
     document.getElementById('atletaForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Evita o envio padrão do formulário
 
@@ -24,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Obter valores dos campos do formulário
         const name = document.getElementById('nomeAtleta').value.trim();
         const birth_date = document.getElementById('idadeAtleta').value.trim();
-        const height = parseFloat(document.getElementById('alturaAtleta').value.trim()); // Corrigido para aceitar float
-        const weight = parseFloat(document.getElementById('pesoAtleta').value.trim()); // Corrigido para aceitar float
+        const height = parseFloat(document.getElementById('alturaAtleta').value.trim());
+        const weight = parseFloat(document.getElementById('pesoAtleta').value.trim());
         const best_times = document.getElementById('bestTimes').value.trim();
         const medal_history = document.getElementById('medalHistory').value.trim();
-        const specializations = document.getElementById('specializations').value.trim(); // Obtendo o valor do campo de especializações
-
+        const specializations = document.getElementById('specializations').value.trim();
         const country = document.getElementById('paisAtleta').value.trim();
         const team = document.getElementById('equipeAtleta').value.trim();
         const modality = document.getElementById('esporteAtleta').value.trim();
 
+        // Montar objeto com os dados atualizados do atleta
         const dadosAtualizados = {
             name: name,
             birth_date: birth_date,
@@ -51,48 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         await atualizarAtleta(idAtleta, dadosAtualizados);
     });
 
-    async function buscarAtleta(idAtleta) {
-        try {
-            const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/athlete/${idAtleta}`);
-            if (!response.ok) {
-                throw new Error('Atleta não encontrado');
-            }
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error(`Erro ao buscar atleta: ${error.message}`);
-            return null;
-        }
-    }
-
-    function preencherCamposFormulario(dadosAtuais) {
-        document.getElementById('nomeAtleta').value = dadosAtuais.name;
-        document.getElementById('idadeAtleta').value = dadosAtuais.birth_date;
-        document.getElementById('alturaAtleta').value = dadosAtuais.height;
-        document.getElementById('pesoAtleta').value = dadosAtuais.weight;
-        document.getElementById('bestTimes').value = dadosAtuais.best_times;
-        document.getElementById('medalHistory').value = dadosAtuais.medal_history;
-        document.getElementById('specializations').value = dadosAtuais.specializations; // Preencher o campo de especializações
-
-        // Preencher os campos adicionais
-        document.getElementById('paisAtleta').value = dadosAtuais.country;
-        document.getElementById('equipeAtleta').value = dadosAtuais.team;
-        document.getElementById('esporteAtleta').value = dadosAtuais.modality;
-    }
-
-    function limparCamposFormulario() {
-        document.getElementById('nomeAtleta').value = '';
-        document.getElementById('idadeAtleta').value = '';
-        document.getElementById('alturaAtleta').value = '';
-        document.getElementById('pesoAtleta').value = '';
-        document.getElementById('bestTimes').value = '';
-        document.getElementById('medalHistory').value = '';
-        document.getElementById('specializations').value = ''; // Limpar o campo de especializações
-        document.getElementById('paisAtleta').value = '';
-        document.getElementById('equipeAtleta').value = '';
-        document.getElementById('esporteAtleta').value = '';
-    }
-
+    // Função para atualizar os dados do atleta
     async function atualizarAtleta(idAtleta, dadosAtualizados) {
         try {
             const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/athlete/${idAtleta}`, {

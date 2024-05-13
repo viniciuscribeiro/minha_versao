@@ -6,6 +6,66 @@
     <link rel="stylesheet" href="../styles/edit_atleta.css" />
     <title>Buscar Atleta</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    
+    <style>
+        #resultadoBusca {
+            margin-top: 20px;
+        }
+
+        .atleta {
+            position: relative;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; /* Adiciona uma borda cinza */
+        }
+
+        .atleta:hover {
+            background-color: #eaeaea;
+        }
+
+        .atleta h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .atleta p {
+            margin-right: 40px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+
+        .atleta .icons-container {
+            position: absolute;
+            top: 60%;
+            right: 5px; /* Ajusta a distância do lado direito */
+            transform: translateY(-50%);
+            width: 24px; /* Largura das imagens */
+            height: auto; /* Altura automática */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .atleta .icons-container a {
+            margin-bottom: 10px; /* Aumenta a margem entre os links das imagens */
+        }
+
+        .atleta .icons-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .atleta .icone-lixeira {
+            top: calc(50% + 30px); /* Ajusta a posição vertical da lixeira */
+        }
+
+    </style>
+
+
 </head>
 <body>
     <div id="header">
@@ -14,14 +74,17 @@
 
     <div id="content">
         <form id="buscarAtletaForm">
-            <label for="idAtleta">ID do Atleta:</label>
-            <input type="number" id="idAtleta" name="idAtleta" placeholder="ID" required><br><br>
+            <label for="nomeAtleta">Nome do Atleta:</label>
+            <input type="text" id="nomeAtleta" name="nomeAtleta" placeholder="Nome" required><br><br>
             <button type="submit">Buscar Atleta</button>
         </form>
-
+        
         <form id="buscarTodosAtletasForm">
             <button type="submit">Buscar Todos os Atletas</button>
         </form>
+        
+        <div id="resultadoBusca"></div> <!-- Container para exibir os resultados da busca -->
+        
 
         <!-- Aqui você pode adicionar um elemento para exibir os detalhes do atleta encontrado, se necessário -->
     </div>
