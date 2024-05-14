@@ -18,7 +18,7 @@
             background-color: #f4f4f4;
             border-radius: 8px;
             padding: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 60px; 
             border: 1px solid #ccc; /* Adiciona uma borda cinza */
         }
 
@@ -28,22 +28,29 @@
 
         .atleta h3 {
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: 900;
+            font-size: 25px;
         }
 
         .atleta p {
             margin-right: 40px;
             margin-top: 0;
-            margin-bottom: 0;
+            margin-bottom: 10px;
             margin-left: 0;
+        }
+
+        .atleta p::before {
+            content: attr(data-label);
+            font-weight: 600;
         }
 
         .atleta .icons-container {
             position: absolute;
-            top: 60%;
+            top: 75%;
             right: 5px; /* Ajusta a distância do lado direito */
             transform: translateY(-50%);
-            width: 24px; /* Largura das imagens */
+            width: 30px; /* Largura das imagens */
             height: auto; /* Altura automática */
             display: flex;
             flex-direction: column;
@@ -51,7 +58,7 @@
         }
 
         .atleta .icons-container a {
-            margin-bottom: 10px; /* Aumenta a margem entre os links das imagens */
+            margin-bottom: 150px; /* Aumenta a margem entre os links das imagens */
         }
 
         .atleta .icons-container img {

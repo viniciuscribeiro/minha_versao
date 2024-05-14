@@ -78,10 +78,40 @@ document.addEventListener('DOMContentLoaded', function() {
             nomeAtleta.textContent = atleta.name;
     
             const idadeAtleta = document.createElement('p');
-            idadeAtleta.textContent = `Data de Nascimento: ${formatarData(atleta.birth_date)}`;
+            idadeAtleta.textContent = `: ${formatarData(atleta.birth_date)}`;
+            idadeAtleta.setAttribute('data-label', 'Data de Nascimento');
     
             const paisAtleta = document.createElement('p');
-            paisAtleta.textContent = `País: ${atleta.country}`;
+            paisAtleta.textContent = `: ${atleta.country}`;
+            paisAtleta.setAttribute('data-label', 'País');
+
+            const alturaAtleta = document.createElement('p');
+            alturaAtleta.textContent = `: ${atleta.height}`;
+            alturaAtleta.setAttribute('data-label', 'Altura');
+
+            const pesoAtleta = document.createElement('p');
+            pesoAtleta.textContent = `: ${atleta.weight}`;
+            pesoAtleta.setAttribute('data-label', 'Peso');
+
+            const bestTimes = document.createElement('p');
+            bestTimes.textContent = `: ${atleta.best_times}`;
+            bestTimes.setAttribute('data-label', 'Melhores tempos');
+
+            const medalHistory = document.createElement('p');
+            medalHistory.textContent = `: ${atleta.medal_history}`;
+            medalHistory.setAttribute('data-label', 'Histórico de Medalhas');
+
+            const specializations = document.createElement('p');
+            specializations.textContent = `: ${atleta.specializations}`;
+            specializations.setAttribute('data-label', 'Especializações');
+
+            const equipeAtleta = document.createElement('p');
+            equipeAtleta.textContent = `: ${atleta.team}`;
+            equipeAtleta.setAttribute('data-label', 'Equipe');
+
+            const esporteAtleta = document.createElement('p');
+            esporteAtleta.textContent = `: ${atleta.modality}`;
+            esporteAtleta.setAttribute('data-label', 'Modalidade');
     
             // Adicionando imagens da caneta e da lixeira como links
             const linkEditar = document.createElement('a');
@@ -110,6 +140,13 @@ document.addEventListener('DOMContentLoaded', function() {
             atletaDiv.appendChild(nomeAtleta);
             atletaDiv.appendChild(idadeAtleta);
             atletaDiv.appendChild(paisAtleta);
+            atletaDiv.appendChild(alturaAtleta);
+            atletaDiv.appendChild(pesoAtleta);
+            atletaDiv.appendChild(bestTimes);
+            atletaDiv.appendChild(medalHistory);
+            atletaDiv.appendChild(specializations);
+            atletaDiv.appendChild(equipeAtleta);
+            atletaDiv.appendChild(esporteAtleta);
     
             listaAtletas.appendChild(atletaDiv);
         });
