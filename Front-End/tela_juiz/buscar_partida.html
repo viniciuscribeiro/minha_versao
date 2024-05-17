@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/edit_atleta.css" />
+    <title>Buscar Partida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Estilos para os resultados da busca */
+        .partida {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .partida p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Buscar Partida</h1>
+    </div>
+
+    <div id="content">
+        <form id="buscarPartidaForm">
+            <label for="dataPartida">Data da Partida:</label>
+            <input type="date" id="dataPartida" name="dataPartida" required>
+            <button type="submit">Buscar Partida</button>
+        </form>
+        
+        <form id="buscarTodasPartidasForm">
+            <button type="submit">Buscar Todas as Partidas</button>
+        </form>
+        
+        <div id="resultadoBusca"></div> <!-- Container para exibir os resultados da busca -->
+    </div>
+
+    <div id="footer">
+        <a href="home.html">Voltar para Home</a>
+    </div>
+
+    <script src="crud_partida/get_da_partida.js"></script> <!-- Script JavaScript para buscar a partida -->
+</body>
+</html>

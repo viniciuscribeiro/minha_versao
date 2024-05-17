@@ -1,27 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('atletaForm').addEventListener('submit', async function(event) {
+    // Obter o campo de ID da Partida
+    const idPartidaInput = document.getElementById('id').value;
+
+    // Obter o ID da partida da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const idPartidaFromURL = urlParams.get('id');
+
+    // Preencher o campo "ID" com o valor da URL, se disponível
+    if (idPartidaFromURL) {
+        idPartidaInput.value = idPartidaFromURL;
+    }
+
+    // Adicionar evento de submissão ao formulário
+    document.getElementById('partidaForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Evita o envio padrão do formulário
 
-        // Obter o ID do atleta a ser excluído do campo de texto
-        const idAtletaParaExcluir = parseInt(document.getElementById('idAtletaParaExcluir').value);
+        // Obter o ID da partida a ser excluído do campo de texto
+        const idPartidaParaExcluir = parseInt(document.getElementById('id').value);
 
-        // Chamar a função para excluir o atleta
-        await excluirAtleta(idAtletaParaExcluir);
+        // Chamar a função para excluir a partida
+        await excluirAtleta(idPartidaParaExcluir);
     });
 
-    async function excluirAtleta(idAtleta) {
+    async function excluirAtleta(match_id) {
         try {
-            const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/athlete/${idAtleta}`, {
+            const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/match/${match_id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
-                console.log('Atleta excluído com sucesso');
+                console.log('Partida excluída com sucesso!');
+                alert('Partida excluída com sucesso!');
                 // Faça algo após a exclusão, se necessário
             } else {
-                console.error('Erro ao excluir atleta:', response.statusText);
+                console.error('Erro ao excluir Partida:', response.statusText);
             }
         } catch (error) {
-            console.error('Erro ao excluir atleta:', error);
+            console.error('Erro ao excluir Partida:', error);
         }
     }
 });
