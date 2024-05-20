@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const response = await fetch('http://ec2-44-201-200-110.compute-1.amazonaws.com/matches');
             if (!response.ok) {
-                throw new Error('Erro ao buscar as partidas');
+                throw new Error('Erro ao buscar as partidas!');
             }
             const partidas = await response.json();
             console.log('Todas as partidas:', partidas);
