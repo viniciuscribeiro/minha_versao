@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Obter o campo de ID da Partida
-    const idPartidaInput = document.getElementById('id').value;
+    // Aguarde o carregamento completo da página
+
+    // Obtendo o campo de ID da Partida
+    const idPartidaInput = document.getElementById('idPartida');
 
     // Obter o ID da partida da URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Evita o envio padrão do formulário
 
         // Obter o ID da partida a ser excluído do campo de texto
-        const idPartidaParaExcluir = parseInt(document.getElementById('id').value);
+        const idPartidaParaExcluir = parseInt(idPartidaFromURL);
 
         // Chamar a função para excluir a partida
         await excluirAtleta(idPartidaParaExcluir);

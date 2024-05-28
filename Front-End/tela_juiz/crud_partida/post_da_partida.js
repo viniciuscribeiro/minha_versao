@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const match_type = document.getElementById('match_type').value;
         const distanciaProva = parseInt(document.getElementById('distanciaProva').value);
         const localPartida = document.getElementById('localPartida').value;
-        const match_status = document.getElementById('match_status').value;
+        const match_status = 'Partida agendada';
         const judges = document.getElementById('judges').value;
-        const result = document.getElementById('result').value;
+        const result = '';
 
         // Obtém os nomes dos atletas e os junta em uma única string
         let atletas = '';

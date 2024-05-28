@@ -3,37 +3,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  ul {
+}
+
+ul {
     list-style: none;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
-  }
-  
-  img {
+}
+
+img {
     width: 100%;
     height: auto;
-  }
+}
 
 /*====  CONTAINER ====================== */
 
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 100vh;
 }
 
-
-.side_image{
-    max-width: 50vw;
+.side_image {
+    max-width: 43.2rem;
 }
 
 /*====  FORM ====================== */
 
-.form_container{
+.form_container {
     align-items: center;
     padding: 4rem 5rem;
     margin: auto;
@@ -41,7 +41,7 @@
     /* border: 1px solid black; */
 }
 
-.login_title{
+.login_title {
     display: block;
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
@@ -53,7 +53,7 @@
     margin-bottom: 1rem;
 }
 
-.login_subtitle{
+.login_subtitle {
     display: block;
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
@@ -65,7 +65,7 @@
     color: #636364;
 }
 
-.input-title{
+.input-title {
     margin-top: 1rem;
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
@@ -74,7 +74,7 @@
     font-style: normal;
 }
 
-#email{
+#email {
     width: 100%;
     height: 2.5rem;
     border-radius: 12px;
@@ -87,7 +87,7 @@
     font-style: normal;
 }
 
-#senha{
+#senha {
     margin-bottom: 0.5rem;
     width: 100%;
     height: 2.5rem;
@@ -101,7 +101,7 @@
     font-style: normal;
 }
 
-.forgot-password-container{
+.forgot-password-container {
     margin-top: 2rem;
 }
 
@@ -117,7 +117,7 @@
     cursor: pointer;
 }
 
-.login_button{
+.login_button {
     width: 100%;
     height: 2.5rem;
     border-radius: 12px;
@@ -134,7 +134,7 @@
     margin-top: 0.6rem;
 }
 
-.register{
+.register {
     margin-top: 0.6rem;
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
@@ -145,10 +145,10 @@
 
 .register-link {
     color: #8b39dd;
-    transition: color 0.3s; 
+    transition: color 0.3s;
 }
 
-p.login_button > a{
+p.login_button>a {
     text-align: center;
     color: white;
 }
@@ -160,5 +160,3 @@ p.login_button > a{
 .error-message {
     animation: shake 0.5s;
 }
-
-

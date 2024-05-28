@@ -93,6 +93,29 @@ document.addEventListener('DOMContentLoaded', function() {
             const resultadoPartida = document.createElement('p');
             resultadoPartida.textContent = `Resultado: ${partida.result}`;
 
+            // Adicionando imagens da caneta e da lixeira como links
+            const linkEditar = document.createElement('a');
+            linkEditar.href = `../tela_juiz/atualizar_partida.html?id=${partida.id}`; // Defina o URL de edição aqui
+            linkEditar.classList.add('link-editar');
+            const imgCaneta = document.createElement('img');
+            imgCaneta.src = 'https://cdn-icons-png.flaticon.com/512/1159/1159725.png'; // URL da imagem da caneta
+            imgCaneta.alt = 'Editar';
+            linkEditar.appendChild(imgCaneta);
+    
+            const linkExcluir = document.createElement('a');
+            linkExcluir.href = `../tela_juiz/excluir_partida.html?id=${partida.id}`; // Defina o URL de exclusão aqui
+            linkExcluir.classList.add('link-excluir');
+            const imgLixeira = document.createElement('img');
+            imgLixeira.src = 'https://cdn-icons-png.flaticon.com/512/1214/1214428.png'; // URL da imagem da lixeira
+            imgLixeira.alt = 'Excluir';
+            linkExcluir.appendChild(imgLixeira);
+    
+            // Adicionando os links de edição e exclusão ao bloco da partida
+            const iconsDiv = document.createElement('div');
+            iconsDiv.classList.add('icons-container');
+            iconsDiv.appendChild(linkEditar);
+            iconsDiv.appendChild(linkExcluir);
+
             partidaDiv.appendChild(dataPartida);
             partidaDiv.appendChild(localPartida);
             partidaDiv.appendChild(tipoPartida);
@@ -101,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
             partidaDiv.appendChild(statusPartida);
             partidaDiv.appendChild(juizesPartida);
             partidaDiv.appendChild(resultadoPartida);
-
+            partidaDiv.appendChild(iconsDiv);
+            
             listaPartidas.appendChild(partidaDiv);
         });
         resultadoBusca.appendChild(listaPartidas);

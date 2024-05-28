@@ -6,25 +6,97 @@
     <link rel="stylesheet" href="../styles/edit_atleta.css" />
     <title>Buscar Partida</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    
     <style>
         /* Estilos para os resultados da busca */
+
+        #resultadoBusca {
+            margin-top: 20px;
+        }
+
         .partida {
-            border: 1px solid #ccc;
+            position: relative;
+            background-color: #f4f4f4;
+            border-radius: 8px;
             padding: 10px;
+            margin-bottom: 60px; 
+            border: 1px solid #ccc; /* Adiciona uma borda cinza */
+        }
+
+        .partida:hover {
+            background-color: #eaeaea;
+        }
+
+        .partida h3 {
+            margin-top: 0;
             margin-bottom: 10px;
+            font-weight: 900;
+            font-size: 25px;
         }
 
         .partida p {
-            margin: 5px 0;
+            margin-right: 40px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        .partida p::before {
+            content: attr(data-label);
+            font-weight: 600;
+        }
+        .partida .icons-container {
+            position: absolute;
+            top: 75%;
+            right: 5px; /* Ajusta a distância do lado direito */
+            transform: translateY(-50%);
+            width: 30px; /* Largura das imagens */
+            height: auto; /* Altura automática */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .partida .icons-container a {
+            margin-bottom: 150px; /* Aumenta a margem entre os links das imagens */
+        }
+
+        .partida .icons-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .partida .icone-lixeira {
+            top: calc(50% + 30px); /* Ajusta a posição vertical da lixeira */
+        }
+
+        .criar_partida {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px; /* Bordas arredondadas */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+            font-size: 18px; /* Aumenta o tamanho da fonte */
+            cursor: pointer; /* Muda o cursor ao passar por cima */
+            margin-bottom: 100px;
+        }
+
+        .criar_partida:hover {
+            background-color: #0056b3; /* Cor de destaque ao passar o cursor */
+            transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
         }
     </style>
 </head>
 <body>
     <div id="header">
-        <h1>Buscar Partida</h1>
+        <h1>Partida</h1>
     </div>
 
     <div id="content">
+        <a class="criar_partida" href="criar_partida.html">Criar Partida</a></li>
         <form id="buscarPartidaForm">
             <label for="dataPartida">Data da Partida:</label>
             <input type="datetime-local" id="dataPartida" name="dataPartida" required>

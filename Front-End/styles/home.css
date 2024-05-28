@@ -1,65 +1,259 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/*====  RESET ============================ */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Fundo gradiente */
-}
-
-#header {
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-}
-
-#content {
-    margin: 50px auto;
-    width: 80%;
-    max-width: 700px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-h1 {
-    margin: 0;
-}
-
-h2 {
-    margin-top: 0;
-    color: #000000; /* Cor da fonte */
+    box-sizing: border-box;
 }
 
 ul {
     list-style: none;
-    padding: 0;
-}
-
-/* Adiciona espaço entre o título e a lista de opções */
-#content ul {
-    margin-top: 50px; /* Espaçamento superior de 20 pixels */
-}
-
-li {
-    margin-bottom: 50px;
 }
 
 a {
-    display: block;
-    background-color: #007bff;
-    color: #fff;
     text-decoration: none;
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px; /* Bordas arredondadas */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-    font-size: 18px; /* Aumenta o tamanho da fonte */
-    cursor: pointer; /* Muda o cursor ao passar por cima */
 }
 
-a:hover {
-    background-color: #0056b3; /* Cor de destaque ao passar o cursor */
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+img {
+    width: 100%;
+    height: auto;
 }
+
+#content{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/*====  HEADER ============================ */
+
+#header {
+    height: 6.25rem;
+    display: flex;
+    background-color: #0A0E13;
+}
+
+/*====  Side Left ==== */
+
+.side-left {
+    width: 39rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.background-menu {
+    width: 48px;
+    height: 48px;
+    background-color: #252C32;
+    border-radius: 50%;
+    margin-block: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.8rem;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 24px;
+}
+
+.vertical-line {
+    height: 4rem;
+    width: 1.2px;
+    background-color: #727272;
+    margin-block: auto;
+    border-radius: 10%;
+}
+
+/*====  Side Right ==== */
+
+.side-right {
+    width: 82.313rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.background-user {
+    width: 48px;
+    height: 48px;
+    background-color: #252C32;
+    border-radius: 50%;
+    margin-block: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.8rem;
+    cursor: pointer;
+}
+
+.user-icon {
+    width: 24px;
+
+}
+
+.olympic-logo {
+    width: 100px;
+    margin-block: auto;
+    margin-inline: auto;
+}
+
+/*====  FILTER ============================ */
+
+#filter-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #0A0E13;
+}
+
+.title-container {
+    height: 5.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.filter-title {
+    margin-left: 2rem;
+    color: #8FA3B0;
+    margin-block: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-container {
+    height: 11rem;
+    width: 37.688rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-title {
+    color: #8FA3B0;
+    margin-left: 4rem;
+    margin-block: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.horizontal-line {
+    height: 1.2px;
+    width: 34.313rem;
+    background-color: #727272;
+    margin-inline: auto;
+}
+
+/*====  MATCHMAKING ========================= */
+
+#matchmaking-container{
+    width: 82.5rem;
+    background-color: #0F1519;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75.875rem;
+    height: 15.625rem;
+    margin-inline: auto;
+}
+
+.match-day{
+    margin-block: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    color: white
+}
+
+.match-day span{
+    font-family: "Poppins", sans-serif;
+    font-size: 44px;
+    font-weight: 400;
+    font-style: normal;
+    color: white
+}
+
+.swimmers-global-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 48.625rem;
+    margin-block: auto;
+    gap: 1rem;
+}
+
+.swimmer-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.swimmer-text{
+    width: 22.625rem;
+    margin-block: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: white
+}
+
+.icon-flag{
+    width: 40px;
+}
+
+.left-swimmer-side-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.right-swimmer-side-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.match-type{
+    margin-top: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    color: #8FA3B0;
+    margin-bottom: 2rem;
+}
+
+.match-type span{
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    color: #8FA3B0;
+}
+
+.horizontal-match-line{
+    width: 75rem;
+    height: 1.2px;
+    background-color: #727272;
+    border-radius: 10%;
+    margin-inline: auto;
+    margin-top: 2rem;
+    position: relative;
+}
+
+/*====  COVER PAGE ========================= */

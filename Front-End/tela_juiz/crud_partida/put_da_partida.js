@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Função para buscar os dados da partida e preencher os campos do formulário
     async function preencherCamposComDadosDaPartida(idPartida) {
-        const dadosAtuais = await buscarAtleta(idPartida);
+        const dadosAtuais = await buscarPartida(idPartida);
 
         if (dadosAtuais) {
             preencherCamposFormulario(dadosAtuais);
