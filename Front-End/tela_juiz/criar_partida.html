@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/criar_partida.css" />
-    <!-- Link para o arquivo de estilo -->
-    <title>Criando Partida</title>
+    <title>Criar Partida</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,119 +13,144 @@
     />
   </head>
   <body>
-    <div id="header">
-      <h1>Criando Partida</h1>
+    <div class="container">
+      <div class="form-container">
+        <p class="form-title">CRIAR PARTIDA</p>
+        <p class="form-subtitle">Insira os dados da partida</p>
+        <form id="partidaForm">
+          <div class="layer-form">
+            <div class="match-info">
+              <div>
+                <p class="input-title">Data e Hora</p>
+                <input
+                  class="select-field"
+                  type="datetime-local"
+                  id="dataHoraPartida"
+                  name="dataHoraPartida"
+                  required
+                />
+              </div>
+              <div>
+                <p class="input-title">Modalidade de Nado</p>
+                <select
+                  class="select-field"
+                  id="match_type"
+                  name="match_type"
+                  required
+                >
+                  <option value="0">Selecione</option>
+                  <option value="Peito">Peito</option>
+                  <option value="Costas">Costas</option>
+                  <option value="Borboleta">Borboleta</option>
+                  <option value="Livre">Livre</option>
+                  <option value="Medley">Medley</option>
+                </select>
+              </div>
+              <div>
+                <p class="input-title">Distância da Prova(m)</p>
+                <select class="select-field" id="distanciaProva" name="distanciaProva" required>
+                  <option value="0">Selecione</option>
+                  <option value="50">50m</option>
+                  <option value="100">100m</option>
+                  <option value="200">200m</option>
+                  <option value="400">400m</option>
+                  <option value="800">800m</option>
+                  <option value="1500">1500m</option>
+                </select>
+              </div>
+            </div>
+            <div id="atletasContainer">
+              <div class="athlete-layer">
+                <div class="atleta">
+                  <div>
+                    <p class="input-title">Atleta 1</p>
+                    <input class="input-field" type="text" id="atleta1Nome" name="atleta1Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 2</p>
+                    <input class="input-field" type="text" id="atleta2Nome" name="atleta2Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="athlete-layer">
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 3</p>
+                    <input class="input-field" type="text" id="atleta3Nome" name="atleta3Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 4</p>
+                    <input class="input-field" type="text" id="atleta4Nome" name="atleta4Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="athlete-layer">
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 5</p>
+                    <input class="input-field" type="text" id="atleta5Nome" name="atleta5Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 6</p>
+                    <input class="input-field" type="text" id="atleta6Nome" name="atleta6Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="athlete-layer">
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 7</p>
+                    <input class="input-field" type="text" id="atleta7Nome" name="atleta7Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+                <div class="atleta">
+                  <div>
+                    <p class="input-title" >Atleta 8</p>
+                    <input class="input-field" type="text" id="atleta8Nome" name="atleta8Nome" placeholder="Nome" required/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="aditional-informations">
+              <div>
+                <p class="input-title">Local</p>
+                <input
+                class="input-field"
+                type="text"
+                id="localPartida"
+                name="localPartida"
+                required
+              />
+              </div>
+              <div >
+                <p class="input-title">Juízes</p>
+                </p>
+                <input
+                  class="input-field"
+                  type="text"
+                  id="judges"
+                  name="judges"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="side-buttons">
+            <a class="back-button-title" href="home.html">
+              <button type="button" class="back-button">Voltar</button></a
+            >
+            <button class="submit-button" type="submit">Cadastrar Partida</button>
+          </div>
+        </form>
+      </div>
+      <img class="side-image" src="../assets/images/Swimmer Cadastration.png" />
     </div>
-
-    <div id="content">
-      <h2>Partida</h2>
-      <form id="partidaForm">
-        <label for="dataHoraPartida">Data e Hora:</label>
-        <input
-          type="datetime-local"
-          id="dataHoraPartida"
-          name="dataHoraPartida"
-          required
-        /><br /><br />
-
-        <label for="specializations">Tipo de Partida:</label>
-        <input
-          type="text"
-          id="match_type"
-          name="match_type"
-          placeholder="Tipo de Partida"
-          required
-        /><br /><br />
-
-        <label for="distanciaProva">Distância da Prova(m):</label>
-        <input
-          type="number"
-          id="distanciaProva"
-          name="distanciaProva"
-          placeholder="Distância da Prova"
-          required
-        /><br /><br />
-
-        <!-- Campos dos Atletas -->
-        <div id="atletasContainer">
-          <div class="atleta">
-            <h3>Atleta 1</h3>
-            <label for="atleta1Nome">Nome:</label>
-            <input type="text" id="atleta1Nome" name="atleta1Nome" required />
-          </div>
-          <div class="atleta">
-            <h3>Atleta 2</h3>
-            <label for="atleta2Nome">Nome:</label>
-            <input type="text" id="atleta2Nome" name="atleta2Nome" required />
-          </div>
-          <div class="atleta">
-            <h3>Atleta 3</h3>
-            <label for="atleta3Nome">Nome:</label>
-            <input type="text" id="atleta3Nome" name="atleta3Nome" required />
-          </div>
-
-          <div class="atleta">
-            <h3>Atleta 4</h3>
-            <label for="atleta4Nome">Nome:</label>
-            <input type="text" id="atleta4Nome" name="atleta4Nome" required />
-          </div>
-
-          <div class="atleta">
-            <h3>Atleta 5</h3>
-            <label for="atleta5Nome">Nome:</label>
-            <input type="text" id="atleta5Nome" name="atleta5Nome" required />
-          </div>
-
-          <div class="atleta">
-            <h3>Atleta 6</h3>
-            <label for="atleta6Nome">Nome:</label>
-            <input type="text" id="atleta6Nome" name="atleta6Nome" required />
-          </div>
-
-          <div class="atleta">
-            <h3>Atleta 7</h3>
-            <label for="atleta7Nome">Nome:</label>
-            <input type="text" id="atleta7Nome" name="atleta7Nome" required />
-          </div>
-
-          <div class="atleta">
-            <h3>Atleta 8</h3>
-            <label for="atleta8Nome">Nome:</label>
-            <input type="text" id="atleta8Nome" name="atleta8Nome" required />
-          </div>
-        </div>
-
-        <hr />
-
-        <label for="localPartida" class="localPartida">Local:</label>
-        <input
-          type="text"
-          id="localPartida"
-          name="localPartida"
-          required
-        /><br /><br />
-
-
-        <label for="judges">Juizes:</label>
-        <input
-          type="text"
-          id="judges"
-          name="judges"
-          placeholder="Juizes"
-          required
-        /><br /><br />
-
-
-        <button type="submit">Realizar Partida</button>
-      </form>
-    </div>
-
-    <div id="footer">
-      <a href="home.html">Voltar para Home</a>
-      <a href="criar_atleta.html">Criar Atleta</a>
-    </div>
-
     <script src="crud_partida/post_da_partida.js"></script>
-    <!-- Script JavaScript -->
   </body>
 </html>

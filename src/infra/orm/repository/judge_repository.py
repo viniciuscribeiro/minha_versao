@@ -2,12 +2,21 @@ from sqlalchemy.orm import Session
 from src.schemas import schemas
 from src.infra.orm.models import models
 from typing import List
+from fastapi import FastAPI, HTTPException
+from src.infra.auth import hash_provider
+from sqlalchemy import select
 
 class JudgeRepository():
     def __init__(self, db: Session):
         self.db = db
+
+    def get_by_email(self, email: str):
+        query = select(models.Judge).where(models.Judge.email == email)
+        return self.db.execute(query).scalars().first()
     
     def create(self, judge: schemas.JudgeDTO):
+
+
         db_judge = models.Judge(
             name=judge.name,
             surname=judge.surname,
@@ -56,6 +65,7 @@ class JudgeRepository():
             self.db.commit()
             return db_judge
         return None
+
     
     def get_judge(self, judge_id: int):
         judge = self.db.query(models.Judge).filter(models.Judge.id == judge_id).first()

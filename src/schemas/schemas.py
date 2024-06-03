@@ -57,3 +57,7 @@ class MatchDTO(BaseModel):
 
     class Config:
         orm_mode = True
+
+class LoginDTO(BaseModel):
+    email: str
+    password: str

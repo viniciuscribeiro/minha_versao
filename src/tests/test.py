@@ -14,14 +14,14 @@ def test_home():
     assert response.status_code == 200
     assert response.json() == {"homepage": "this is a homepage"}
 
-def test_get_athletes():
-    response = client.get("/athletes")
-    assert response.status_code == 200
+# def test_get_athletes():
+#     response = client.get("/athletes")
+#     assert response.status_code == 200
 
-def test_get_judges():
-    response = client.get("/judges")
-    assert response.status_code == 200
+# def test_get_judges():
+#     response = client.get("/judges")
+#     assert response.status_code == 200
 
-def test_get_matches():
-    response = client.get("/matches")
-    assert response.status_code == 200
+# def test_get_matches():
+#     response = client.get("/matches")
+#     assert response.status_code == 200

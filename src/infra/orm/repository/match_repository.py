@@ -44,3 +44,6 @@ class MatchRepository():
     
     def get_match(self, match_id: int):
         return self.db.query(models.Match).filter(models.Match.id == match_id).first()
+
+    def get_match_by_type(self, matchtype: str):
+        return self.db.query(models.Match).filter(models.Match.match_type == matchtype).all()

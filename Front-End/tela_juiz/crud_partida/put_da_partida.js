@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     // Obter o campo de ID da partida
     const idPartidaInput = document.getElementById('idPartida');
 
@@ -48,11 +48,21 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('match_status').value = dadosAtuais.match_status;
         document.getElementById('judges').value = dadosAtuais.judges;
         document.getElementById('result').value = dadosAtuais.result;
-        document.getElementById('atletasEnvolvidos').value = dadosAtuais.athletes_involved;
+
+        var nomesAtletas = dadosAtuais.athletes_involved;
+
+        // Separando os nomes em um array
+        var nomesArray = nomesAtletas.split(", ");
+
+        // Atualizando os campos de input com os nomes dos atletas
+        for (var i = 0; i < nomesArray.length; i++) {
+            var inputId = "atleta" + (i + 1) + "Nome";
+            document.getElementById(inputId).value = nomesArray[i];
+        }
     }
 
     // Event listener para quando o campo de ID da partida mudar
-    idPartidaInput.addEventListener('change', async function() {
+    idPartidaInput.addEventListener('change', async function () {
         const idPartida = idPartidaInput.value.trim();
         const dadosAtuais = await buscarPartida(idPartida);
 
@@ -64,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
 
     // Event listener para o envio do formulário
-    document.getElementById('partidaForm').addEventListener('submit', async function(event) {
+    document.getElementById('partidaForm').addEventListener('submit', async function (event) {
         event.preventDefault(); // Evita o envio padrão do formulário
 
         // Obter ID da partida a ser atualizada
@@ -80,9 +90,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         const match_status = document.getElementById('match_status').value.trim();
         const judges = document.getElementById('judges').value.trim();
         const location = document.getElementById('localPartida').value.trim();
-        const athletes_involved = document.getElementById('atletasEnvolvidos').value.trim();
-        const result = document.getElementById('result').value.trim();
-        
+        const result = "";
+        let atletas = '';
+        for (let i = 1; i <= 8; i++) {
+            const atletaNome = document.getElementById('atleta' + i + 'Nome').value;
+            if (atletaNome.trim() !== '') {
+                atletas += atletaNome + ', ';
+            }
+        }
+        // Remove a vírgula extra no final
+        atletas = atletas.slice(0, -2);
+
+
         // Montar objeto com os dados atualizados da Partida
         const dadosAtualizados = {
             datetime: datetime,
@@ -91,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             match_status: match_status,
             judges: judges,
             location: location,
-            athletes_involved: athletes_involved,
+            athletes_involved: atletas,
             result: result,
         };
 
@@ -99,14 +118,22 @@ document.addEventListener('DOMContentLoaded', async function() {
         await atualizarPartida(idPartida, dadosAtualizados);
     });
 
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+      }
     // Função para atualizar os dados da partida
     async function atualizarPartida(idPartida, dadosAtualizados) {
+        const token = getCookie('access_token');
         try {
             const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/match/${idPartida}`, {
                 method: 'PUT', // Método PUT para atualizar
-                headers: {
+                headers:{
+                    'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
-                },
+                  },
                 body: JSON.stringify(dadosAtualizados)
             });
             const data = await response.json();

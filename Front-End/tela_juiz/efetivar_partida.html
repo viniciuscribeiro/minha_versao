@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/efetivar_partida.css" />
+  <!-- Link para o arquivo de estilo -->
+  <title>Atualizar Partida</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+</head>
+
+<body>
+  <div id="header">
+    <h1>Efetivar Partida</h1>
+  </div>
+
+  <div id="content">
+    <h2>Inserindo Dados</h2>
+    <form id="partidaForm">
+
+      <input type="number" id="idPartida" name="idPartida" placeholder="id" readonly />
+      
+      <input type="datetime-local" id="dataHoraPartida" name="dataHoraPartida" readonly />
+      <label for="specializations">Tipo de Partida:</label>
+      <input type="text" id="match_type" name="match_type" readonly />
+       <br /><br />
+
+      <label for="distanciaProva">Distância da Prova(m):</label>
+      <input type="text" id="distanciaProva" name="distanciaProva" readonly/>
+      <br /><br />
+
+
+      <!-- Campos dos Atletas -->
+      <div id="atletasContainer">
+        <div class="atleta">
+          <h3>Atleta 1</h3>
+          <label for="atleta1Nome">Nome:</label>
+          <input type="text" id="atleta1Nome" name="atleta1Nome" readonly />
+          <label for="atleta1Nome">Tempo:</label>
+          <input type="text" id="tempo1" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+        <div class="atleta">
+          <h3>Atleta 2</h3>
+          <label for="atleta2Nome">Nome:</label>
+          <input type="text" id="atleta2Nome" name="atleta2Nome" readonly />
+          <label for="atleta2Nome">Tempo:</label>
+          <input type="text" id="tempo2" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+        <div class="atleta">
+          <h3>Atleta 3</h3>
+          <label for="atleta3Nome">Nome:</label>
+          <input type="text" id="atleta3Nome" name="atleta3Nome" readonly />
+          <label for="atleta3Nome">Tempo:</label>
+          <input type="text" id="tempo3" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+
+        <div class="atleta">
+          <h3>Atleta 4</h3>
+          <label for="atleta4Nome">Nome:</label>
+          <input type="text" id="atleta4Nome" name="atleta4Nome" readonly />
+          <label for="atleta4Nome">Tempo:</label>
+          <input type="text" id="tempo4" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+
+        <div class="atleta">
+          <h3>Atleta 5</h3>
+          <label for="atleta5Nome">Nome:</label>
+          <input type="text" id="atleta5Nome" name="atleta5Nome" readonly />
+          <label for="atleta5Nome">Tempo:</label>
+          <input type="text" id="tempo5" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+
+        <div class="atleta">
+          <h3>Atleta 6</h3>
+          <label for="atleta6Nome">Nome:</label>
+          <input type="text" id="atleta6Nome" name="atleta6Nome" readonly />
+          <label for="atleta6Nome">Tempo:</label>
+          <input type="text" id="tempo6" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+
+        <div class="atleta">
+          <h3>Atleta 7</h3>
+          <label for="atleta7Nome">Nome:</label>
+          <input type="text" id="atleta7Nome" name="atleta7Nome" readonly />
+          <label for="atleta7Nome">Tempo:</label>
+          <input type="text" id="tempo7" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+
+        </div>
+
+        <div class="atleta">
+          <h3>Atleta 8</h3>
+          <label for="atleta8Nome">Nome:</label>
+          <input type="text" id="atleta8Nome" name="atleta8Nome" readonly />
+          <label for="atleta8Nome">Tempo:</label>
+          <input type="text" id="tempo8" name="tempo" pattern="^([0-5][0-9]):([0-5][0-9]):([0-9][0-9])$"
+            placeholder="MM:SS:MS" required>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 1; i <= 8; i++) {
+              let inputId = 'tempo' + i;
+              let input = document.getElementById(inputId);
+              input.addEventListener('input', function (e) {
+                let inputValue = e.target.value;
+                // Remove caracteres não numéricos
+                inputValue = inputValue.replace(/\D/g, '');
+                // Adiciona os ":" automaticamente
+                if (inputValue.length > 2 && inputValue.charAt(2) !== ':') {
+                  inputValue = inputValue.slice(0, 2) + ':' + inputValue.slice(2);
+                }
+                if (inputValue.length > 5 && inputValue.charAt(5) !== ':') {
+                  inputValue = inputValue.slice(0, 5) + ':' + inputValue.slice(5);
+                }
+                // Limita o tamanho do valor
+                inputValue = inputValue.slice(0, 8);
+                // Atualiza o valor no campo de entrada
+                e.target.value = inputValue;
+              });
+            }
+          });
+        </script>
+      </div>
+
+      
+      <input type="text" id="localPartida" placeholder="Local da Partida" name="localPartida" required />
+
+    
+      <input type="text" id="match_status" name="match_status" placeholder="Status da Partida" required />
+
+      <label for="judges">Juizes:</label>
+      <input type="text" id="judges" name="judges" placeholder="Juizes" readonly /><br /><br />
+
+
+      <div for="result">
+        <h3>Resultado:</h3>
+        <label for="result">Medalha de ouro:</label>
+        <input type="text" id="gold" name="result" placeholder="Primeiro colocado" readonly />
+        <label for="result">Medalha de prata:</label>
+        <input type="text" id="silver" name="result" placeholder="Segundo colocado" readonly />
+        <label for="result">Medalha de bronze:</label>
+        <input type="text" id="bronze" name="result" placeholder="Terceiro colocado" readonly />
+      </div>
+      <br /><br />
+
+      <button type="submit">Finalizar Partida</button>
+    </form>
+  </div>
+
+  <div id="footer">
+    <a href="home.html">Voltar para Home</a>
+  </div>
+
+  <script src="crud_partida/efetivar_partida.js"></script>
+  <!-- Script JavaScript -->
+</body>
+
+</html>

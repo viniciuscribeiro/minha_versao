@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleMenu = document.getElementByClassName('background-menu')
-  const coverPage = document.getElementByClassName('coverPage')
+  const backgroundMenu = document.getElementById('background-menu')
+  const coverPage = document.getElementById('coverPage')
+  const closeMenu = document.getElementById('background-close-menu')
 
-  toggleMenu.addEventListener('click', () => {
-    if (coverPage.classList.contains('visible')) {
-      coverPage.classList.remove('visible')
-      setTimeout(() => {
-        coverPage.classList.add('hidden')
-      }, 500) // Tempo igual ao da transição
-    } else {
-      coverPage.classList.remove('hidden')
-      setTimeout(() => {
-        coverPage.classList.add('visible')
-      }, 10) // Pequeno atraso para permitir a transição
-    }
+  backgroundMenu.addEventListener('click', () => {
+    coverPage.classList.remove('hidden')
+    console.log('Qualquer Coisa')
+    setTimeout(() => {
+      coverPage.classList.add('visible')
+    }, 10)
+  })
+
+  closeMenu.addEventListener('click', () => {
+    coverPage.classList.remove('visible')
+    setTimeout(() => {
+      coverPage.classList.add('hidden')
+    }, 500)
   })
 })

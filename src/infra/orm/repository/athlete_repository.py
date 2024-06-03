@@ -46,3 +46,6 @@ class AthleteRepository():
     
     def get_athlete(self, athlete_id: int):
         return self.db.query(models.Athlete).filter(models.Athlete.id == athlete_id).first()
+
+    def get_athlete_by_name(self, name: str):
+        return self.db.query(models.Athlete).filter(models.Athlete.name == name).first()

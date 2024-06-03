@@ -96,19 +96,19 @@ img {
 }
 
 .menu-color1{
-  background-color: #22031F;
+  background-color: #78660B;
 }
 
 .menu-color2{
-  background-color: #432818;
+  background-color: #6D7A0F;
 }
 
 .menu-color3{
-  background-color: #1F271B;
+  background-color: #FFA890;
 }
 
 .menu-color4{
-  background-color: #37000A;
+  background-color: #543522;
 }
 
 .hero-header .header-item-container{
@@ -127,7 +127,8 @@ img {
   height: 42px;
   text-align: center;
   border-radius: 92.8px;
-  background-color: #F9F9F9;
+  background-color: #ffffff;
+  color: #051325;
   opacity: 1;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -148,7 +149,8 @@ img {
   height: 42px;
   text-align: center;
   border-radius: 92.8px;
-  background-color: #F9F9F9;
+  background-color: #ffffff;
+  color: #051325;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -168,7 +170,8 @@ img {
   height: 42px;
   text-align: center;
   border-radius: 92.8px;
-  background-color: #F9F9F9;
+  background-color: #ffffff;
+  color: #051325;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -188,7 +191,8 @@ img {
   height: 42px;
   text-align: center;
   border-radius: 100px;
-  background-color: #F9F9F9;
+  background-color: #ffffff;
+  color: #051325;
   transition: all 0.3s ease;
 }
 
@@ -227,12 +231,29 @@ img {
 /*=============== MAIN ==================*/
 
 body{
-  background-color: #F9F9F9;
+  background-color: #051325;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4d4d4d;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0f1519;
+  border-radius: 4px;
 }
 
 main{
   height: 3500px;
-  background-color: #F9F9F9;
+  background-color: #051325;
   padding-left: 14rem;
   max-width: calc(224px + 770px);
 }
@@ -254,20 +275,7 @@ main .logo{
   font-weight: 400;
   font-style: normal;
   font-size: 38px;
-}
-
-.paragraph{
-  font-family: "Source Sans 3", sans-serif;
-  width: 765px;
-  padding-top: 80px;
-  font-size: 18px;
-}
-
-.paragraph-title{
-  font-family: "Source Sans 3", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+  color: white;
 }
 
 .title{
@@ -276,9 +284,42 @@ main .logo{
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
+  color: white;
 }
 
+.paragraph-title{
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+.paragraph{
+  font-family: "Source Sans 3", sans-serif;
+  width: 765px;
+  padding-top: 80px;
+  font-size: 18px;
+  color: white;
+}
+
+
+
 /*=============== FOOTER ==================*/
+
+.names-container{
+  margin-block: auto;
+  display: flex;
+  flex-direction: column;
+  gap:  1.25rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  padding-left: 960px;
+  color: #051325;
+}
 
 .social-icons-container{
   height: 20rem;
@@ -288,8 +329,20 @@ main .logo{
   justify-content: center;
   right: 5%;
   gap: 1.25rem;
-  padding-right: 100px;
+  padding-right: 224px;
   position: absolute;
+}
+
+.social-button{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.github-button{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .github-icons-container{
@@ -300,7 +353,7 @@ main .logo{
   justify-content: center;
   margin-left: auto;
   gap: 1.25rem;
-  padding-right: 280px;
+  padding-right: 400px;
 }
 
 .social-icon{
@@ -314,6 +367,7 @@ main .logo{
 }
 
 .footer{
-  background-color: #051325;
+  display: flex;
+  background-color: #E1CA96;
   height: 20rem;
 }

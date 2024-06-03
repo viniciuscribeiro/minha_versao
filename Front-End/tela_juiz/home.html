@@ -16,7 +16,7 @@
   <body>
     <header id="header">
       <div class="side-left">
-        <div class="background-menu">
+        <div id="background-menu">
           <img class="menu-icon" src="../assets/icons/Menu-White.png" alt="" />
         </div>
         <div class="vertical-line"></div>
@@ -43,15 +43,19 @@
         </div>
         <div class="filter-options">
           <div class="option-container">
-            <p class="option-title">Crawl</p>
-            <div class="horizontal-line"></div>
-          </div>
-          <div class="option-container">
             <p class="option-title">Peito</p>
             <div class="horizontal-line"></div>
           </div>
           <div class="option-container">
             <p class="option-title">Costas</p>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="option-container">
+            <p class="option-title">Borboleta</p>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="option-container">
+            <p class="option-title">Livre</p>
             <div class="horizontal-line"></div>
           </div>
           <div class="option-container">
@@ -63,166 +67,200 @@
 
       <matches id="matchmaking-container">
         <div class="match-container">
-          <p class="match-day">Sábado<br /><span>27</span><br />Julho</p>
+          <p class="match-day">
+            Sábado<br /><span>27</span><br />Julho<br />10:00 h
+          </p>
           <div class="swimmers-global-container">
             <div class="left-swimmer-side-container">
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/bg.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 1</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/al.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 2</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/sg.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 3</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
-                <p class="swimmer-text">Nadador 4</p>
                 <img
                   class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
+                  src="../assets/flag-icons-main/flags/4x3/us.svg"
                   alt=""
                 />
+                <p class="swimmer-text">Nadador 4</p>
               </div>
             </div>
             <!-- <div class="vertical-match-line"></div> -->
             <div class="right-swimmer-side-container">
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/fr.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 5</p>
+              </div>
+              <div class="swimmer-container">
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
-              </div>
-              <div class="swimmer-container">
                 <p class="swimmer-text">Nadador 6</p>
+              </div>
+              <div class="swimmer-container">
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
-              </div>
-              <div class="swimmer-container">
                 <p class="swimmer-text">Nadador 7</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
-                <p class="swimmer-text">Nadador 8</p>
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
+                <p class="swimmer-text">Nadador 8</p>
               </div>
             </div>
           </div>
-          <p class="match-type">
-            <span>Crawl</span><br />Classificatória<br />100m
-          </p>
+          <p class="match-type"><span>Crawl</span><br />100m</p>
         </div>
         <div class="horizontal-match-line"></div>
         <div class="match-container">
-          <p class="match-day">Sábado<br /><span>27</span><br />Julho</p>
+          <p class="match-day">
+            Segunda<br /><span>29</span><br />Julho<br />10:00 h
+          </p>
           <div class="swimmers-global-container">
             <div class="left-swimmer-side-container">
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/bg.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 1</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/al.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 2</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/sg.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 3</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
-                <p class="swimmer-text">Nadador 4</p>
                 <img
                   class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
+                  src="../assets/flag-icons-main/flags/4x3/us.svg"
                   alt=""
                 />
+                <p class="swimmer-text">Nadador 4</p>
               </div>
             </div>
             <!-- <div class="vertical-match-line"></div> -->
             <div class="right-swimmer-side-container">
               <div class="swimmer-container">
+                <img
+                  class="icon-flag"
+                  src="../assets/flag-icons-main/flags/4x3/fr.svg"
+                  alt=""
+                />
                 <p class="swimmer-text">Nadador 5</p>
+              </div>
+              <div class="swimmer-container">
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
-              </div>
-              <div class="swimmer-container">
                 <p class="swimmer-text">Nadador 6</p>
+              </div>
+              <div class="swimmer-container">
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
-              </div>
-              <div class="swimmer-container">
                 <p class="swimmer-text">Nadador 7</p>
-                <img
-                  class="icon-flag"
-                  src="../assets/icons/Bandeira-Brasil.png"
-                  alt=""
-                />
               </div>
               <div class="swimmer-container">
-                <p class="swimmer-text">Nadador 8</p>
                 <img
                   class="icon-flag"
                   src="../assets/icons/Bandeira-Brasil.png"
                   alt=""
                 />
+                <p class="swimmer-text">Nadador 8</p>
               </div>
-              <div class="horizontal-match-line2"></div>
             </div>
           </div>
-          <p class="match-type">
-            <span>Crawl</span><br />Classificatória<br />100m
-          </p>
+          <p class="match-type"><span>Crawl</span><br />100m</p>
         </div>
       </matches>
     </content>
 
     <menu>
-      <div class="menu-hidden"></div>
+      <div id="coverPage" class="hidden">
+        <div class="side-menu">
+          <div id="background-close-menu">
+            <img class="close-icon" src="../assets/icons/Excluir.png" alt="" />
+          </div>
+          <div class="menu-options-container">
+            <div class="side-menu-options-container">
+              <p class="side-menu-title">Navegação</p>
+              <a href="../index.html" class="side-menu-option">Início</a>
+            </div>
+            <div class="side-menu-options-container">
+              <p class="side-menu-title">Atletas</p>
+              <a href="../tela_juiz/criar_atleta.html" class="side-menu-option"
+                >Cadastrar Atleta</a
+              >
+              <a href="../tela_juiz/buscar_atleta.html" class="side-menu-option"
+                >Buscar Atletas</a
+              >
+            </div>
+            <div class="side-menu-options-container">
+              <p class="side-menu-title">Partida</p>
+              <a href="../tela_juiz/criar_partida.html" class="side-menu-option"
+                >Criar Partida</a
+              >
+              <a
+                href="../tela_juiz/buscar_partida.html"
+                class="side-menu-option"
+                >Buscar Partida</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="menu-image">
+          <img src="../assets/images/Olympic Tower.png" alt="" />
+        </div>
+      </div>
     </menu>
 
     <!-- <div>

@@ -24,10 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
         await excluirAtleta(idPartidaParaExcluir);
     });
 
-    async function excluirAtleta(match_id) {
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+      }
+      
+      // pegar o token jwt que foi salvo nos cookies
+      
+      async function excluirAtleta(match_id) {
+        const token = getCookie('access_token');
+
         try {
             const response = await fetch(`http://ec2-44-201-200-110.compute-1.amazonaws.com/match/${match_id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers:{
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                  }
             });
             if (response.ok) {
                 console.log('Partida excluída com sucesso!');
